@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucero Media | Fotografía, realización audiovisual y streaming</title>
+<meta name="description" content="Fotografía, realización audiovisual y streaming para empresas.">
+<link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--ar:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 20'%3E%3Cpolyline points='2,18 18,2 25,9' fill='none' stroke='%23000' stroke-width='3.4'/%3E%3C/svg%3E");--az:#202F56;--am:#FDC73C;--gr:#F0F0F0;--tx:#141414}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--gr);color:var(--tx);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--am);outline-offset:3px}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ar{display:inline-block;flex:none;width:1.1em;height:.8em;margin-top:.1em;background:currentColor;-webkit-mask:var(--ar) center/contain no-repeat;mask:var(--ar) center/contain no-repeat;transition:transform .25s}
+.w:hover .ar{transform:translate(4px,-4px)}
+h2{font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;font-size:clamp(2.4rem,7vw,6.5rem)}
+h2 em{font-style:normal;font-weight:200}
+
+/* Encabezado */
+#hd{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:16px 4vw;color:#fff;background:linear-gradient(#000a,#0000);transition:transform .35s,background .35s}
+#hd.solid{background:var(--az)}
+#hd.hide{transform:translateY(-100%)}
+.logo img{height:26px;display:block}
+.bar{display:flex;align-items:center;gap:30px;font-weight:500;font-size:.95rem}
+.bar nav{display:flex;gap:28px;align-items:center}
+.dd{position:relative}
+.dd-menu{position:absolute;top:100%;left:-16px;min-width:210px;padding:10px 0;background:var(--az);display:none}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+.dd-menu a{display:block;padding:10px 16px}
+.dd-menu a:hover,nav>a:hover,.dd>button:hover{color:var(--am)}
+.soc{display:flex;gap:14px;list-style:none}
+.soc a:hover{color:var(--am)}
+.burger{display:none;width:44px;height:44px}
+.burger span{display:block;width:26px;height:3px;background:#fff;margin:5px auto}
+
+/* Reel */
+#reel{height:100vh;height:100svh;background:var(--az);position:relative}
+#reel video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Servicios */
+#servicios{min-height:100vh;padding:130px 4vw 90px;background:var(--az);color:#fff}
+.sv{border-top:2px solid #ffffff40}
+.sv:last-child{border-bottom:2px solid #ffffff40}
+.sv-h{width:100%;display:flex;align-items:center;gap:3vw;padding:2vh 0;text-align:left}
+.zz{width:clamp(60px,9vw,130px);flex:none;fill:none;stroke:var(--am);stroke-width:5;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .8s}
+.sv.on .zz{stroke-dashoffset:0}
+.t{flex:1;font-size:clamp(2.6rem,9.5vw,8.5rem);line-height:1;text-transform:uppercase;letter-spacing:-.01em;color:#ffffffb8;transition:color .3s}
+.t b{font-weight:800}.t span{font-weight:200}
+.sv-h:hover .t,.sv.on .t{color:var(--am)}
+.pl{width:34px;height:34px;position:relative;flex:none;color:#fff}
+.pl::before,.pl::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:currentColor;transition:transform .35s}
+.pl::after{transform:rotate(90deg)}
+.sv.on .pl::after{transform:none}
+.sv-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.7,0,.2,1)}
+.sv.on .sv-b{grid-template-rows:1fr}
+.sv-b ul{min-height:0;overflow:hidden;list-style:none;padding-left:calc(clamp(60px,9vw,130px) + 3vw)}
+.sv-b ul::after{content:"";display:block;height:3vh}
+.sv.on li{animation:in .5s both;animation-delay:calc(var(--n)*60ms + 250ms)}
+.sv-b a,.sv-b p{display:flex;justify-content:space-between;align-items:center;max-width:640px;padding:.55em 0;font-size:clamp(1.2rem,2.6vw,2.1rem);font-weight:500;border-bottom:1px solid #ffffff30;transition:color .2s,border-color .2s}
+.sv-b a::after{content:"";width:1.1em;height:.8em;background:currentColor;-webkit-mask:var(--ar) center/contain no-repeat;mask:var(--ar) center/contain no-repeat;transition:transform .25s}
+.sv-b a:hover{color:var(--am);border-color:var(--am)}
+.sv-b a:hover::after{transform:translate(5px,-5px)}
+.sv-b p{font-weight:300;color:#ffffffb8}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Trabajos */
+.sec{padding:110px 4vw}
+.sec>h2{margin-bottom:6vh}
+.grid{display:flex;gap:2vw}
+.col{flex:1;display:flex;flex-direction:column;gap:2.4vw}
+.col:nth-child(even){margin-top:7vw}
+.w{display:block}
+.ph{background:#3b3b3b;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);transition:filter .4s,transform .6s}
+.w:hover .ph img{filter:none;transform:scale(1.04)}
+.w h3{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-weight:800;text-transform:uppercase;font-size:clamp(1rem,1.9vw,1.7rem);line-height:.95}
+.w h3 span{font-weight:500}
+
+/* Clientes */
+#clientes{background:var(--gr)}
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:34px 26px;align-items:center}
+.logos div,.logos img{height:70px;object-fit:contain;filter:grayscale(1);opacity:.75}
+.logos div{display:grid;place-items:center;border:2px dashed #bbb;font-size:.75rem;font-weight:300;color:#777}
+
+/* Contacto */
+#contacto{min-height:100vh;display:grid;grid-template-columns:1.2fr 1fr;gap:6vw;align-items:center;padding:120px 4vw;color:#fff;background:linear-gradient(135deg,#202F56,#16213f 70%,#0d1530)}
+#contacto h2 em{display:block;margin-top:2vh;font-size:.45em}
+.btns{display:flex;flex-direction:column;max-width:560px}
+.btn{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:.55em 0;border-bottom:1px solid #ffffff40;font-size:clamp(1.3rem,2.8vw,2.2rem);font-weight:500;transition:color .2s,border-color .2s}
+.btn span{display:flex;align-items:center;gap:14px}
+.btn::after{content:"";flex:none;width:1.1em;height:.8em;background:currentColor;-webkit-mask:var(--ar) center/contain no-repeat;mask:var(--ar) center/contain no-repeat;transition:transform .25s}
+.btn.main{font-weight:800;text-transform:uppercase}
+.btn:hover{color:var(--am);border-color:var(--am)}
+.btn:hover::after{transform:translate(5px,-5px)}
+.btn[hidden]{display:none}
+.btns h3{margin:40px 0 4px;font-weight:200;text-transform:uppercase;font-size:clamp(1.3rem,2.8vw,2.2rem)}
+
+footer{background:#000;padding:64px 4vw}
+footer img{height:38px;display:block}
+
+@media (max-width:820px){
+ .burger{display:block}
+ .bar{position:fixed;inset:0 0 0 22%;background:var(--az);flex-direction:column;align-items:flex-start;justify-content:center;gap:28px;padding:40px;font-size:1.3rem;transform:translateX(100%);transition:transform .35s}
+ .bar.open{transform:none}
+ .bar nav{flex-direction:column;align-items:flex-start}
+ .dd-menu{position:static;display:block;padding:6px 0 0 8px;background:none}
+ .burger{position:relative;z-index:2}
+ .grid{flex-wrap:wrap}.col{flex:1 1 44%}.col:nth-child(even){margin-top:0}
+ #contacto{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"/></symbol>
+ <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></symbol>
+ <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9v6l5-3z"/></symbol>
+ <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+</svg>
+
+<header id="hd">
+ <a class="logo" href="#reel" aria-label="Lucero Media, inicio"><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></a>
+ <button class="burger" id="bg" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+ <div class="bar" id="bar">
+  <nav>
+   <div class="dd"><a href="#servicios">Servicios ▾</a>
+    <div class="dd-menu" id="ddm"></div></div>
+   <a href="#trabajos">Trabajos</a>
+   <a href="#clientes">Clientes</a>
+   <a href="#contacto">Contacto</a>
+  </nav>
+  <ul class="soc" id="hs"></ul>
+ </div>
+</header>
+
+<main>
+<section id="reel">
+ <video autoplay muted loop playsinline preload="auto" poster="assets/media/reel-poster.jpg"><source src="assets/media/reel.mp4" type="video/mp4"></video>
+</section>
+
+<section id="servicios" aria-label="Servicios"><div id="svl"></div></section>
+
+<section class="sec" id="trabajos"><h2>Trabajos <em>destacados</em></h2><div class="grid" id="grid"></div></section>
+
+<section class="sec" id="clientes"><h2>/ Clientes que han confiado en nosotros</h2><div class="logos" id="logos"></div></section>
+
+<section id="contacto">
+ <h2>¿Tenés un proyecto en mente?<em>Hablemos</em></h2>
+ <div class="btns" id="btns">
+  <a class="btn main" id="wa" hidden target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn main" id="ml">Escribinos un mail</a>
+  <h3>Seguinos</h3>
+ </div>
+</section>
+</main>
+
+<footer><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></footer>
+
+<script src="data/trabajos.js"></script>
+<script>
+/* ===== Configuración: completá acá lo que falte ===== */
+const CFG={
+ whatsapp:'',                         // ej: '5491112345678' (código de país, sin + ni espacios)
+ mail:['luceromedia.ar','gmail.com'], // luego: ['hola','luceromedia.ar']
+ redes:{linkedin:'',instagram:'',youtube:'https://www.youtube.com/@luceromedia-ar',facebook:'',x:''}
+};
+const PROD=[
+ {k:'fotografia',a:'Foto',b:'grafía',s:['Producto','Institucional','Moda','Corporativo']},
+ {k:'realizacion',a:'Realiza',b:'ción',s:['Redes Sociales','Coberturas','Institucional','Documental']},
+ {k:'streaming',a:'Strea',b:'ming',s:['Bodas','Eventos','Programas','Conferencias','Webinars']},
+ {k:'agencia',a:'Agenc',b:'IA',s:[]}
+];
+const TRAB=[['p01','Proyecto 01','4/5'],['p02','Proyecto 02','1/1'],['p03','Proyecto 03','3/4'],['p04','Proyecto 04','4/5'],
+ ['p05','Proyecto 05','1/1'],['p06','Proyecto 06','4/5'],['p07','Proyecto 07','3/4'],['p08','Proyecto 08','1/1']];
+const $=s=>document.querySelector(s);
+const slug=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-');
+
+/* Redes */
+const ico=k=>`<svg class="i"><use href="#i-${k}"/></svg>`;
+const nombres={linkedin:'LinkedIn',instagram:'Instagram',youtube:'YouTube',facebook:'Facebook',x:'X'};
+const orden=['linkedin','instagram','youtube','facebook','x'].filter(k=>CFG.redes[k]);
+$('#hs').innerHTML=orden.map(k=>`<li><a href="${CFG.redes[k]}" target="_blank" rel="noopener" aria-label="${nombres[k]}">${ico(k)}</a></li>`).join('');
+$('#btns').insertAdjacentHTML('beforeend',orden.map(k=>`<a class="btn" href="${CFG.redes[k]}" target="_blank" rel="noopener"><span>${ico(k)} ${nombres[k]}</span></a>`).join(''));
+if(CFG.whatsapp){const w=$('#wa');w.hidden=false;w.href='https://wa.me/'+CFG.whatsapp}
+$('#ml').href='mailto:'+CFG.mail.join('@'); /* el mail se arma por partes para que los robots no lo lean */
+
+/* Servicios */
+const zz='<svg class="zz" viewBox="0 0 120 40" aria-hidden="true"><polyline pathLength="1" points="2,34 22,6 40,32 60,6 80,32 100,6 118,34"/></svg>';
+$('#svl').innerHTML=PROD.map((p,i)=>`<div class="sv"><button class="sv-h" data-i="${i}" aria-expanded="false">${zz}<span class="t"><b>${p.a}</b><span>${p.b}</span></span><i class="pl"></i></button><div class="sv-b"><ul>${p.s.length?p.s.map((x,j)=>`<li style="--n:${j}"><a href="categoria.html?c=${p.k}-${slug(x)}">${x}</a></li>`).join(''):'<li style="--n:0"><p>En construcción</p></li>'}</ul></div></div>`).join('');
+$('#ddm').innerHTML=PROD.map((p,i)=>`<a href="#servicios" data-i="${i}">${p.a+p.b}</a>`).join('');
+function show(i,toggle){document.querySelectorAll('.sv').forEach((el,j)=>{const on=j==i&&(toggle?!el.classList.contains('on'):true);el.classList.toggle('on',on);el.querySelector('button').setAttribute('aria-expanded',on)})}
+$('#svl').addEventListener('click',e=>{const b=e.target.closest('.sv-h');if(b)show(+b.dataset.i,true)});
+$('#ddm').addEventListener('click',e=>{const a=e.target.closest('a');if(a)show(+a.dataset.i)});
+show(0);
+
+/* Trabajos y clientes */
+const D=(typeof TRABAJOS!=='undefined'?TRABAJOS:[]).filter(t=>t.destacado).slice(0,8).map(t=>[t.id,t.titulo,t.ratio||'4/5',t.imagen]);
+const cols=[[],[],[],[]];
+(D.length?D:TRAB).forEach((t,i)=>cols[i%4].push(`<a class="w" href="trabajo.html?id=${t[0]}"><div class="ph" style="aspect-ratio:${t[2]}"><img src="${t[3]||`assets/trabajos/${t[0]}.jpg`}" alt="${t[1]}" loading="lazy" onerror="this.remove()"></div><h3>${t[1]}<i class="ar"></i></h3></a>`));
+$('#grid').innerHTML=cols.map(c=>`<div class="col">${c.join('')}</div>`).join('');
+const CL=typeof CLIENTES!=='undefined'?CLIENTES:[];
+$('#logos').innerHTML=CL.length?CL.map(c=>`<img src="assets/clientes/${c.f}" alt="${c.n}" loading="lazy">`).join(''):Array.from({length:12},(_,i)=>`<div>Logo cliente ${i+1}</div>`).join('');
+
+/* Encabezado: transparente sobre el reel, azul después; se oculta al bajar */
+const hd=$('#hd');let y0=0;
+addEventListener('scroll',()=>{
+ const y=scrollY,pasó=y>innerHeight-90;
+ hd.classList.toggle('solid',pasó);
+ hd.classList.toggle('hide',pasó&&y>y0&&y>innerHeight);
+ y0=y;
+},{passive:true});
+const bg=$('#bg'),bar=$('#bar');
+bg.onclick=()=>{const o=bar.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+bar.addEventListener('click',e=>{if(e.target.closest('a'))bar.classList.remove('open')});
+</script>
+</body>
+</html>

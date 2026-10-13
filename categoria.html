@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="es"><head><title>Lucero Media</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/sub.css"></head><body>
+<header><a href="index.html" aria-label="Lucero Media, inicio"><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></a><a id="vol" href="index.html#servicios">← Servicios</a></header>
+<main id="m"></main>
+<footer><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></footer>
+<script src="data/trabajos.js"></script>
+<script>
+const S={fotografia:['Fotografía','Producto','Institucional','Moda','Corporativo'],realizacion:['Realización','Redes Sociales','Coberturas','Institucional','Documental'],streaming:['Streaming','Bodas','Eventos','Programas','Conferencias','Webinars']};
+const slug=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-');
+const c=new URLSearchParams(location.search).get('c')||'';
+let hit=null;for(const k in S)S[k].slice(1).forEach(n=>{if(k+'-'+slug(n)===c)hit=[S[k][0],n]});
+const m=document.getElementById('m');
+if(!hit){m.innerHTML='<div class="vacio"><b>Categoría no encontrada</b>Volvé a Servicios y elegí una de las opciones.</div>'}
+else{
+ document.title=hit[1]+' | '+hit[0]+' | Lucero Media';
+ const L=(typeof TRABAJOS!=='undefined'?TRABAJOS:[]).filter(t=>(t.categorias||[]).includes(c));
+ const cols=[[],[],[],[]];
+ L.forEach((t,i)=>cols[i%4].push('<a class="w" href="trabajo.html?id='+t.id+'&c='+c+'"><div class="ph" style="aspect-ratio:'+(t.ratio||'4/5')+'"><img src="'+(t.imagen||'')+'" alt="'+t.titulo+'" loading="lazy" onerror="this.remove()"></div><h3>'+t.titulo+'<i class="ar"></i></h3></a>'));
+ m.innerHTML='<h1>'+hit[0]+'<small>'+hit[1]+'</small></h1>'+(L.length?'<p class="sub"></p><div class="grid">'+cols.map(x=>'<div class="col">'+x.join('')+'</div>').join('')+'</div>':'<p class="sub"></p><div class="vacio"><b>Próximamente</b>Estamos preparando los trabajos de esta categoría.</div>');
+}
+</script></body></html>

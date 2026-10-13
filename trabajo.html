@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="es"><head><title>Lucero Media</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/sub.css"></head><body>
+<header><a href="index.html" aria-label="Lucero Media, inicio"><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></a><a id="vol" href="index.html#trabajos">← Trabajos</a></header>
+<main id="m"></main>
+<footer><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></footer>
+<script src="data/trabajos.js"></script>
+<script>
+const q=new URLSearchParams(location.search),id=q.get('id'),c=q.get('c');
+const t=(typeof TRABAJOS!=='undefined'?TRABAJOS:[]).find(x=>x.id===id);
+const m=document.getElementById('m');
+if(c){const v=document.getElementById('vol');v.href='categoria.html?c='+c;v.textContent='← Volver a la categoría'}
+function embed(u){
+ let r=u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);if(r)return 'https://www.youtube.com/embed/'+r[1];
+ r=u.match(/vimeo\.com\/(?:video\/)?(\d+)/);if(r)return 'https://player.vimeo.com/video/'+r[1];return '';
+}
+if(!t){m.innerHTML='<div class="vacio"><b>Trabajo no encontrado</b>Todavía no está cargado. Volvé y elegí otro.</div>'}
+else{
+ document.title=t.titulo+' | Lucero Media';
+ const e=t.video?embed(t.video):'';
+ m.innerHTML='<h1>'+t.titulo+(t.cliente?'<small>'+t.cliente+'</small>':'')+'</h1>'
+  +(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':(t.imagen?'<div class="media"><img src="'+t.imagen+'" alt="'+t.titulo+'"></div>':''))
+  +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'');
+}
+</script></body></html>
