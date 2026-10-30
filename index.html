@@ -132,8 +132,7 @@ footer img{height:38px;display:block}
  <button class="burger" id="bg" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
  <div class="bar" id="bar">
   <nav>
-   <div class="dd"><a href="#servicios">Servicios ▾</a>
-    <div class="dd-menu" id="ddm"></div></div>
+   <a href="#servicios">Servicios</a>
    <a href="#trabajos">Trabajos</a>
    <a href="#clientes">Clientes</a>
    <a href="#contacto">Contacto</a>
@@ -196,10 +195,8 @@ $('#ml').href='mailto:'+CFG.mail.join('@'); /* el mail se arma por partes para q
 /* Servicios */
 const zz='<svg class="zz" viewBox="0 0 120 40" aria-hidden="true"><polyline pathLength="1" points="2,34 22,6 40,32 60,6 80,32 100,6 118,34"/></svg>';
 $('#svl').innerHTML=PROD.map((p,i)=>`<div class="sv"><button class="sv-h" data-i="${i}" aria-expanded="false">${zz}<span class="t"><b>${p.a}</b><span>${p.b}</span></span><i class="pl"></i></button><div class="sv-b"><ul>${p.s.length?p.s.map((x,j)=>`<li style="--n:${j}"><a href="categoria.html?c=${p.k}-${slug(x)}">${x}</a></li>`).join(''):'<li style="--n:0"><p>En construcción</p></li>'}</ul></div></div>`).join('');
-$('#ddm').innerHTML=PROD.map((p,i)=>`<a href="#servicios" data-i="${i}">${p.a+p.b}</a>`).join('');
 function show(i,toggle){document.querySelectorAll('.sv').forEach((el,j)=>{const on=j==i&&(toggle?!el.classList.contains('on'):true);el.classList.toggle('on',on);el.querySelector('button').setAttribute('aria-expanded',on)})}
 $('#svl').addEventListener('click',e=>{const b=e.target.closest('.sv-h');if(b)show(+b.dataset.i,true)});
-$('#ddm').addEventListener('click',e=>{const a=e.target.closest('a');if(a)show(+a.dataset.i)});
 show(0);
 
 /* Trabajos y clientes */

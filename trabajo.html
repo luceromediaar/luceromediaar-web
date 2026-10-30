@@ -16,8 +16,10 @@ if(!t){m.innerHTML='<div class="vacio"><b>Trabajo no encontrado</b>Todavía no e
 else{
  document.title=t.titulo+' | Lucero Media';
  const e=t.video?embed(t.video):'';
+ const gal=(t.imagenes&&t.imagenes.length)?'<div class="galeria">'+t.imagenes.map((s,i)=>'<img src="'+s+'" alt="'+t.titulo+' '+(i+1)+'" loading="lazy">').join('')+'</div>':'';
  m.innerHTML='<h1>'+t.titulo+(t.cliente?'<small>'+t.cliente+'</small>':'')+'</h1>'
-  +(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':(t.imagen?'<div class="media"><img src="'+t.imagen+'" alt="'+t.titulo+'"></div>':''))
-  +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'');
+  +(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':(t.imagen&&!gal?'<div class="media"><img src="'+t.imagen+'" alt="'+t.titulo+'"></div>':''))
+  +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'')
+  +gal;
 }
 </script></body></html>
