@@ -17,4 +17,15 @@ const TRABAJOS=[
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
    Ejemplo (sacale los /* */): {n:'Nombre del cliente', f:'nombre-del-archivo.png'}, */
 const CLIENTES=[
+  {n:'Anabea', f:'anabealogo.png'},
+  {n:'Aplicaciones Médicas', f:'aplicacionesmedicaslogo.png'},
+  {n:'Bravío', f:'bravio.png'},
+  {n:'Diagnóstico', f:'diagnostico_logo.png'},
+  {n:'Kiollo', f:'kiollologo.png'},
+  {n:'La Moladora', f:'lamoladora.png'},
+  {n:'SonoScape', f:'Logo-SonoScape_diagXimag.png'},
+  {n:'Mindray', f:'mindraylogo.png'},
+  {n:'OSIAD Salud', f:'osiadsalud2.png'},
+  {n:'Sasson', f:'sassonlogo.png'}
+  /* {n:'?', f:'images-1.png'}, */
 ];
