@@ -48,5 +48,6 @@ const CLIENTES=[
   {n:'SonoScape', f:'Logo-SonoScape_diagXimag.png'},
   {n:'Mindray', f:'mindraylogo.png'},
   {n:'OSIAD Salud', f:'osiadsalud2.png'},
-  {n:'Sasson', f:'sassonlogo.png'}
+  {n:'Sasson', f:'sassonlogo.png'},
+  {n:'TY', f:'Logoty.png'}
 ];

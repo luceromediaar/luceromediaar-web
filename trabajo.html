@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><title>Lucero Media</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/sub.css"></head><body>
+<!DOCTYPE html><html lang="es"><head><title>Lucero Media</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/sub.css?v=3"></head><body>
 <header><a href="index.html" aria-label="Lucero Media, inicio"><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></a><a id="vol" href="index.html#trabajos">← Trabajos</a></header>
 <main id="m"></main>
 <footer><img src="assets/logos/LM_logo_Principal.png" alt="Lucero Media"></footer>
@@ -16,10 +16,49 @@ if(!t){m.innerHTML='<div class="vacio"><b>Trabajo no encontrado</b>Todavía no e
 else{
  document.title=t.titulo+' | Lucero Media';
  const e=t.video?embed(t.video):'';
- const gal=(t.imagenes&&t.imagenes.length)?'<div class="galeria">'+t.imagenes.map((s,i)=>'<img src="'+s+'" alt="'+t.titulo+' '+(i+1)+'" loading="lazy">').join('')+'</div>':'';
- m.innerHTML='<h1>'+t.titulo+(t.cliente?'<small>'+t.cliente+'</small>':'')+'</h1>'
-  +(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':(t.imagen&&!gal?'<div class="media"><img src="'+t.imagen+'" alt="'+t.titulo+'"></div>':''))
-  +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'')
-  +gal;
+ const IM=(t.imagenes&&t.imagenes.length)?t.imagenes:(t.imagen?[t.imagen]:[]);
+ /* Columna fija (1/4) con los datos + columna de fotos (3/4) */
+ m.innerHTML='<div class="tr"><aside class="tr-info"><h1>'+t.titulo+(t.cliente?'<small>'+t.cliente+'</small>':'')+'</h1>'
+  +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'')+'</aside>'
+  +'<div class="tr-fotos">'+(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':'')
+  +'<div class="tgrid" id="tg"></div></div></div>';
+
+ /* Fotos en columnas desfasadas y recortadas (3 en compu, 2 en celular) */
+ const R=['4/5','1/1','3/4','3/4','4/5','1/1'],mq=matchMedia('(max-width:820px)');
+ function pintar(){
+  const n=mq.matches?2:3,cols=Array.from({length:n},()=>[]);
+  IM.forEach((s,i)=>cols[i%n].push('<div role="button" tabindex="0" class="tf" data-i="'+i+'" aria-label="Ver foto '+(i+1)+' de '+IM.length+'"><img src="'+s+'" style="aspect-ratio:'+R[i%6]+'" alt="'+t.titulo+' '+(i+1)+'"></div>'));
+  document.getElementById('tg').innerHTML=cols.map(k=>'<div class="tcol">'+k.join('')+'</div>').join('');
+ }
+ pintar();try{mq.addEventListener('change',pintar)}catch(e1){mq.addListener(pintar)}
+
+ /* Pop-up con slider */
+ if(IM.length){
+  const multi=IM.length>1;
+  document.body.insertAdjacentHTML('beforeend','<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería de fotos" hidden><button type="button" class="lb-x" aria-label="Cerrar"></button>'
+   +(multi?'<button type="button" class="lb-p" aria-label="Foto anterior"></button><button type="button" class="lb-n" aria-label="Foto siguiente"></button>':'')
+   +'<img id="lbi" alt=""><div class="lb-c" id="lbc"></div></div>');
+  const lb=document.getElementById('lb'),li=document.getElementById('lbi'),lc=document.getElementById('lbc');
+  let cur=0,from=null,x0=null;
+  const set=()=>{li.src=IM[cur];li.alt=t.titulo+' '+(cur+1);lc.textContent=multi?(cur+1)+' / '+IM.length:''};
+  const go=d=>{cur=(cur+d+IM.length)%IM.length;set()};
+  const abrir=(i,b)=>{cur=i;from=b;set();lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.lb-x').focus()};
+  const cerrar=()=>{lb.hidden=true;document.body.style.overflow='';if(from&&document.contains(from))from.focus()};
+  document.getElementById('tg').addEventListener('click',ev=>{const b=ev.target.closest('.tf');if(b)abrir(+b.dataset.i,b)});
+  document.getElementById('tg').addEventListener('keydown',ev=>{const b=ev.target.closest('.tf');if(b&&(ev.key==='Enter'||ev.key===' ')){ev.preventDefault();abrir(+b.dataset.i,b)}});
+  lb.addEventListener('click',ev=>{
+   if(ev.target===lb||ev.target.closest('.lb-x'))cerrar();
+   else if(ev.target.closest('.lb-p'))go(-1);
+   else if(ev.target.closest('.lb-n'))go(1);
+  });
+  addEventListener('keydown',ev=>{
+   if(lb.hidden)return;
+   if(ev.key==='Escape')cerrar();
+   else if(multi&&ev.key==='ArrowRight')go(1);
+   else if(multi&&ev.key==='ArrowLeft')go(-1);
+  });
+  lb.addEventListener('touchstart',ev=>{x0=ev.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',ev=>{if(x0===null||!multi)return;const d=ev.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(d<0?1:-1);x0=null});
+ }
 }
 </script></body></html>
