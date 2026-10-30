@@ -42,11 +42,11 @@ const CLIENTES=[
   {n:'Aplicaciones Médicas', f:'aplicacionesmedicaslogo.png'},
   {n:'Bravío', f:'bravio.png'},
   {n:'Diagnóstico', f:'diagnostico_logo.png'},
+  {n:'Digimed', f:'digimedlogo.png'},
   {n:'Kiollo', f:'kiollologo.png'},
   {n:'La Moladora', f:'lamoladora.png'},
   {n:'SonoScape', f:'Logo-SonoScape_diagXimag.png'},
   {n:'Mindray', f:'mindraylogo.png'},
   {n:'OSIAD Salud', f:'osiadsalud2.png'},
   {n:'Sasson', f:'sassonlogo.png'}
-  /* {n:'?', f:'images-1.png'}, */
 ];

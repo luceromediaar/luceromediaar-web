@@ -86,7 +86,7 @@ h2 em{font-style:normal;font-weight:200}
 /* Clientes */
 #clientes{background:var(--gr)}
 .logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:34px 26px;align-items:center}
-.logos div,.logos img{height:70px;object-fit:contain;filter:grayscale(1);opacity:.75}
+.logos div,.logos img{width:100%;max-width:150px;height:70px;margin:0 auto;object-fit:contain;filter:grayscale(1);opacity:.75}
 .logos div{display:grid;place-items:center;border:2px dashed #bbb;font-size:.75rem;font-weight:300;color:#777}
 
 /* Contacto */
@@ -169,8 +169,8 @@ footer img{height:38px;display:block}
 /* ===== Configuración: completá acá lo que falte ===== */
 const CFG={
  whatsapp:'',                         // ej: '5491112345678' (código de país, sin + ni espacios)
- mail:['luceromedia.ar','gmail.com'], // luego: ['hola','luceromedia.ar']
- redes:{linkedin:'',instagram:'https://www.instagram.com/luceromedia.ar/',youtube:'https://www.youtube.com/@luceromedia-ar',facebook:'',x:''}
+ mail:['hola','luceromedia.ar'],
+ redes:{linkedin:'',instagram:'https://www.instagram.com/luceromedia.ar/',youtube:'https://www.youtube.com/@luceromedia-ar',facebook:'https://www.facebook.com/luceromedia.ar/',x:''}
 };
 const PROD=[
  {k:'fotografia',a:'Foto',b:'grafía',s:['Producto','Institucional','Moda','Corporativo']},
