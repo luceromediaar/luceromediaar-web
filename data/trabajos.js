@@ -4,7 +4,7 @@
    realizacion-redes-sociales, realizacion-coberturas, realizacion-institucional, realizacion-documental,
    streaming-bodas, streaming-eventos, streaming-programas, streaming-conferencias, streaming-webinars
    destacado:true -> aparece en "Trabajos destacados" de la portada (máximo 8).
-   Ejemplo (sacale los /* */ para activarlo):
+   Ejemplo (copialo dentro de TRABAJOS, separado por coma):
    {id:'nombre-sin-espacios', titulo:'Nombre del trabajo', cliente:'Cliente', destacado:true, ratio:'4/5',
     categorias:['fotografia-producto','realizacion-institucional'],
     imagen:'assets/trabajos/nombre-sin-espacios.jpg',
@@ -36,7 +36,7 @@ const TRABAJOS=[
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
-   Ejemplo (sacale los /* */): {n:'Nombre del cliente', f:'nombre-del-archivo.png'}, */
+   Ejemplo (copialo dentro de CLIENTES, separado por coma): {n:'Nombre del cliente', f:'nombre-del-archivo.png'} */
 const CLIENTES=[
   {n:'Anabea', f:'anabealogo.png'},
   {n:'Aplicaciones Médicas', f:'aplicacionesmedicaslogo.png'},
