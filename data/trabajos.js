@@ -32,7 +32,12 @@ const TRABAJOS=[
   categorias:['fotografia-institucional'],
   imagen:'assets/trabajos/sasson/sasson001.jpg',
   imagenes:['assets/trabajos/sasson/sasson001.jpg','assets/trabajos/sasson/sasson002.jpg','assets/trabajos/sasson/sasson003.jpg','assets/trabajos/sasson/sasson004.jpg','assets/trabajos/sasson/sasson005.jpg','assets/trabajos/sasson/sasson006.jpg','assets/trabajos/sasson/sasson007.jpg','assets/trabajos/sasson/sasson008.jpg'],
-  brief:'Sasson renovaba su imagen y la web tenía que acompañar ese cambio. Fotografiamos producto y marca para darle una identidad visual coherente, con imágenes que cuentan quién es hoy la empresa.'}
+  brief:'Sasson renovaba su imagen y la web tenía que acompañar ese cambio. Fotografiamos producto y marca para darle una identidad visual coherente, con imágenes que cuentan quién es hoy la empresa.'},
+ {id:'saum-ecocardio', titulo:'SAUM y EcoCardio', cliente:'Digimed', destacado:true, ratio:'4/5',
+  categorias:['fotografia-corporativo','realizacion-coberturas'],
+  imagen:'assets/trabajos/Digimed/digimed001.jpg',
+  imagenes:['assets/trabajos/Digimed/digimed001.jpg','assets/trabajos/Digimed/digimed002.jpg','assets/trabajos/Digimed/digimed003.jpg','assets/trabajos/Digimed/digimed004.jpg','assets/trabajos/Digimed/digimed005.jpg'],
+  brief:'Dos congresos, dos noches de gala. Cubrimos las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, registrando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
@@ -49,5 +54,6 @@ const CLIENTES=[
   {n:'Mindray', f:'mindraylogo.png'},
   {n:'OSIAD Salud', f:'osiadsalud2.png'},
   {n:'Sasson', f:'sassonlogo.png'},
-  {n:'TY', f:'Logoty.png'}
+  {n:'TY', f:'Logoty.png'},
+  {n:'Rasti', f:'logorasti.png'}
 ];
