@@ -37,7 +37,17 @@ const TRABAJOS=[
   categorias:['fotografia-corporativo','realizacion-coberturas'],
   imagen:'assets/trabajos/Digimed/digimed001.jpg',
   imagenes:['assets/trabajos/Digimed/digimed001.jpg','assets/trabajos/Digimed/digimed002.jpg','assets/trabajos/Digimed/digimed003.jpg','assets/trabajos/Digimed/digimed004.jpg','assets/trabajos/Digimed/digimed005.jpg'],
-  brief:'Dos congresos, dos noches de gala. Cubrimos las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, registrando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'}
+  brief:'Dos congresos, dos noches de gala. Cubrimos las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, registrando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'},
+ {id:'rasti-monstruos', titulo:'Monstruos', cliente:'Rasti', destacado:true, ratio:'4/5',
+  categorias:['fotografia-producto'],
+  imagen:'assets/trabajos/rasti-monstruos/monstruos001.jpg',
+  imagenes:['assets/trabajos/rasti-monstruos/monstruos001.jpg','assets/trabajos/rasti-monstruos/monstruos002.jpg','assets/trabajos/rasti-monstruos/monstruos003.jpg','assets/trabajos/rasti-monstruos/monstruos004.jpg'],
+  brief:'Lo monstruoso, pero en familia. Para esta línea de Rasti llevamos el producto a escenas de la vida cotidiana y las integramos al concepto de «lo monstruoso», para que el juego se mezcle con el hogar.'},
+ {id:'rasti', titulo:'Rasti', cliente:'Rasti', destacado:true, ratio:'4/5',
+  categorias:['fotografia-institucional'],
+  imagen:'assets/trabajos/rasti-ladrillos/rasti001.jpg',
+  imagenes:['assets/trabajos/rasti-ladrillos/rasti001.jpg','assets/trabajos/rasti-ladrillos/rasti002.jpg','assets/trabajos/rasti-ladrillos/rasti003.jpg','assets/trabajos/rasti-ladrillos/rasti004.jpg','assets/trabajos/rasti-ladrillos/rasti005.jpg','assets/trabajos/rasti-ladrillos/rasti006.jpg','assets/trabajos/rasti-ladrillos/rasti007.jpg','assets/trabajos/rasti-ladrillos/rasti008.jpg'],
+  brief:'El ladrillo en el centro de la escena. Construimos una campaña de identidad de marca que pone al ladrillo, el producto estrella de Rasti, como protagonista, pensada para redes sociales y para la web.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
