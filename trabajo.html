@@ -15,12 +15,13 @@ function embed(u){
 if(!t){m.innerHTML='<div class="vacio"><b>Trabajo no encontrado</b>Todavía no está cargado. Volvé y elegí otro.</div>'}
 else{
  document.title=t.titulo+' | Lucero Media';
- const e=t.video?embed(t.video):'';
- const IM=(t.imagenes&&t.imagenes.length)?t.imagenes:(t.imagen?[t.imagen]:[]);
+ const VS=(t.videos&&t.videos.length)?t.videos:(t.video?[t.video]:[]);
+ const vids=VS.map(embed).filter(Boolean).map((u,i)=>'<div class="media"><iframe src="'+u+'" title="'+t.titulo+(VS.length>1?' ('+(i+1)+')':'')+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>').join('');
+ const IM=(t.imagenes&&t.imagenes.length)?t.imagenes:((t.imagen&&!VS.length)?[t.imagen]:[]);
  /* Columna fija (1/4) con los datos + columna de fotos (3/4) */
  m.innerHTML='<div class="tr"><aside class="tr-info"><h1>'+t.titulo+(t.cliente?'<small>'+t.cliente+'</small>':'')+'</h1>'
   +(t.brief?'<p class="meta">Brief</p><p class="brief">'+t.brief+'</p>':'')+'</aside>'
-  +'<div class="tr-fotos">'+(e?'<div class="media"><iframe src="'+e+'" title="'+t.titulo+'" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>':'')
+  +'<div class="tr-fotos">'+vids
   +'<div class="tgrid" id="tg"></div></div></div>';
 
  /* Fotos en columnas desfasadas y recortadas (3 en compu, 2 en celular) */

@@ -47,7 +47,17 @@ const TRABAJOS=[
   categorias:['fotografia-institucional'],
   imagen:'assets/trabajos/rasti-ladrillos/rasti001.jpg',
   imagenes:['assets/trabajos/rasti-ladrillos/rasti001.jpg','assets/trabajos/rasti-ladrillos/rasti002.jpg','assets/trabajos/rasti-ladrillos/rasti003.jpg','assets/trabajos/rasti-ladrillos/rasti004.jpg','assets/trabajos/rasti-ladrillos/rasti005.jpg','assets/trabajos/rasti-ladrillos/rasti006.jpg','assets/trabajos/rasti-ladrillos/rasti007.jpg','assets/trabajos/rasti-ladrillos/rasti008.jpg'],
-  brief:'El ladrillo en el centro de la escena. Construimos una campaña de identidad de marca que pone al ladrillo, el producto estrella de Rasti, como protagonista, pensada para redes sociales y para la web.'}
+  brief:'El ladrillo en el centro de la escena. Construimos una campaña de identidad de marca que pone al ladrillo, el producto estrella de Rasti, como protagonista, pensada para redes sociales y para la web.'},
+ {id:'ty-institucional', titulo:'Ty Institucional', cliente:'Ty Diseño', destacado:true, ratio:'4/5',
+  categorias:['fotografia-institucional'],
+  imagen:'assets/trabajos/ty/ty_001.jpg',
+  imagenes:['assets/trabajos/ty/ty_001.jpg','assets/trabajos/ty/ty_002.jpg','assets/trabajos/ty/ty_003.jpg','assets/trabajos/ty/ty_004.jpg','assets/trabajos/ty/ty_005.jpg','assets/trabajos/ty/ty_006.jpg','assets/trabajos/ty/ty_007.jpg','assets/trabajos/ty/ty_008.jpg','assets/trabajos/ty/ty_009.jpg','assets/trabajos/ty/ty_010.jpg','assets/trabajos/ty/ty_011.jpg','assets/trabajos/ty/ty_012.jpg','assets/trabajos/ty/ty_013.jpg','assets/trabajos/ty/ty_014.jpg','assets/trabajos/ty/ty_015.jpg'],
+  brief:'Un estudio de diseño en su ritmo natural. Armamos la campaña de imagen de Ty con fotos pensadas para su web y sus redes, que muestran un ambiente de trabajo relajado con el foco puesto en sus productos.'},
+ {id:'saum-ecocardio-video', titulo:'Cena Gala EcoCardio y SAUM', cliente:'Digimed', destacado:false, ratio:'16/9',
+  categorias:['realizacion-institucional'],
+  imagen:'assets/trabajos/Digimed/digimed_portadaSAUM.jpg',
+  videos:['https://youtu.be/JZtTmnrZeek','https://youtu.be/sbdeG-29KjU'],
+  brief:'Dos congresos, dos noches de gala, ahora en movimiento. Realizamos el registro audiovisual de las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, capturando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
