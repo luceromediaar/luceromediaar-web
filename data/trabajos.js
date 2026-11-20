@@ -56,8 +56,13 @@ const TRABAJOS=[
  {id:'saum-ecocardio-video', titulo:'Cena Gala EcoCardio y SAUM', cliente:'Digimed', destacado:false, ratio:'16/9',
   categorias:['realizacion-institucional'],
   imagen:'assets/trabajos/Digimed/digimed_portadaSAUM.jpg',
-  videos:['https://youtu.be/JZtTmnrZeek','https://youtu.be/sbdeG-29KjU'],
-  brief:'Dos congresos, dos noches de gala, ahora en movimiento. Realizamos el registro audiovisual de las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, capturando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'}
+  videos:['https://www.youtube.com/embed/JZtTmnrZeek','https://www.youtube.com/embed/sbdeG-29KjU'],
+  brief:'Dos congresos, dos noches de gala, ahora en movimiento. Realizamos el registro audiovisual de las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, capturando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'},
+ {id:'programa-cardiopatias-congenitas', titulo:'Programa Nacional de Cardiopatías Congénitas', cliente:'Digimed', destacado:false, ratio:'16/9',
+  categorias:['realizacion-coberturas'],
+  imagen:'assets/trabajos/Digimed/digimed_portadaPosadas.png',
+  video:'https://www.youtube.com/embed/XybsK7-rU_w',
+  brief:'Cuarenta ecógrafos portátiles para todo el país. Cubrimos la entrega que Digimed realizó en acuerdo con el Ministerio de Salud de la Nación, dentro del Programa Nacional de Cardiopatías Congénitas, para que cada equipo llegue a donde hace falta.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
