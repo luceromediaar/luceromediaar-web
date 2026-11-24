@@ -62,7 +62,17 @@ const TRABAJOS=[
   categorias:['realizacion-coberturas'],
   imagen:'assets/trabajos/Digimed/digimed_portadaPosadas.png',
   video:'https://www.youtube.com/embed/XybsK7-rU_w',
-  brief:'Cuarenta ecógrafos portátiles para todo el país. Cubrimos la entrega que Digimed realizó en acuerdo con el Ministerio de Salud de la Nación, dentro del Programa Nacional de Cardiopatías Congénitas, para que cada equipo llegue a donde hace falta.'}
+  brief:'Cuarenta ecógrafos portátiles para todo el país. Cubrimos la entrega que Digimed realizó en acuerdo con el Ministerio de Salud de la Nación, dentro del Programa Nacional de Cardiopatías Congénitas, para que cada equipo llegue a donde hace falta.'},
+ {id:'mindray-argentina', titulo:'Mindray Argentina', cliente:'Mindray', destacado:false, ratio:'16/9',
+  categorias:['realizacion-institucional'],
+  imagen:'assets/trabajos/Mindray/mindray_portada.png',
+  video:'https://youtu.be/Pv7_Z7q-0ZI',
+  brief:'Cuando hablan los que saben. Referentes del diagnóstico por imágenes cuentan, en primera persona, cómo los ecógrafos de Mindray cambiaron su forma de hacer imágenes médicas.'},
+ {id:'sonoscape-hospital-italiano', titulo:'SonoScape y el Hospital Italiano', cliente:'SonoScape', destacado:false, ratio:'16/9',
+  categorias:['realizacion-institucional'],
+  imagen:'assets/trabajos/SonoScape/sonoscape_portada.png',
+  videos:['https://youtu.be/lvUdJuIFpaY','https://youtu.be/NeorAUM1QTw','https://youtu.be/mK7MM_UbdQA','https://youtu.be/2i5eAJqsMIU'],
+  brief:'El Hospital Italiano, desde adentro. Destacados profesionales de este prestigioso hospital cuentan cómo trabajan con los ecógrafos de SonoScape.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
