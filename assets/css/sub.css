@@ -31,6 +31,7 @@ h1 small{display:block;margin-top:.15em;font-size:.6em;font-weight:200}
 .tr-info .meta{margin-top:4vh;font-size:.85rem;letter-spacing:.04em}
 .tr-info .brief{font-size:1rem;line-height:1.6}
 .tr-fotos .media{max-width:none;margin:0 0 .8vw}
+.tr-fotos .media.v{aspect-ratio:9/16;max-width:min(100%,380px)}
 .tgrid{display:flex;gap:.8vw}
 .tcol{flex:1;display:flex;flex-direction:column;gap:.8vw}
 .tcol:nth-child(even){margin-top:4vw}

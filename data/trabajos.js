@@ -35,8 +35,8 @@ const TRABAJOS=[
   brief:'Sasson renovaba su imagen y la web tenía que acompañar ese cambio. Fotografiamos producto y marca para darle una identidad visual coherente, con imágenes que cuentan quién es hoy la empresa.'},
  {id:'saum-ecocardio', titulo:'SAUM y EcoCardio', cliente:'Digimed', destacado:true, ratio:'4/5',
   categorias:['fotografia-corporativo'],
-  imagen:'assets/trabajos/Digimed/digimed001.jpg',
-  imagenes:['assets/trabajos/Digimed/digimed001.jpg','assets/trabajos/Digimed/digimed002.jpg','assets/trabajos/Digimed/digimed003.jpg','assets/trabajos/Digimed/digimed004.jpg','assets/trabajos/Digimed/digimed005.jpg'],
+  imagen:'assets/trabajos/digimed-trabajos/digimed001.jpg',
+  imagenes:['assets/trabajos/digimed-trabajos/digimed001.jpg','assets/trabajos/digimed-trabajos/digimed002.jpg','assets/trabajos/digimed-trabajos/digimed003.jpg','assets/trabajos/digimed-trabajos/digimed004.jpg','assets/trabajos/digimed-trabajos/digimed005.jpg'],
   brief:'Dos congresos, dos noches de gala. Cubrimos las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, registrando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'},
  {id:'rasti-monstruos', titulo:'Monstruos', cliente:'Rasti', destacado:true, ratio:'4/5',
   categorias:['fotografia-producto'],
@@ -55,24 +55,34 @@ const TRABAJOS=[
   brief:'Un estudio de diseño en su ritmo natural. Armamos la campaña de imagen de Ty con fotos pensadas para su web y sus redes, que muestran un ambiente de trabajo relajado con el foco puesto en sus productos.'},
  {id:'saum-ecocardio-video', titulo:'Cena Gala EcoCardio y SAUM', cliente:'Digimed', destacado:false, ratio:'16/9',
   categorias:['realizacion-coberturas'],
-  imagen:'assets/trabajos/Digimed/digimed_portadaSAUM.jpg',
+  imagen:'assets/trabajos/digimed-trabajos/digimed_portadaSAUM.jpg',
   videos:['https://www.youtube.com/embed/JZtTmnrZeek','https://www.youtube.com/embed/sbdeG-29KjU'],
   brief:'Dos congresos, dos noches de gala, ahora en movimiento. Realizamos el registro audiovisual de las cenas que Digimed organizó para el Simposio de la Sociedad Argentina de Ultrasonografía en Medicina y Biología 2024 y para el Congreso de EcoCardio 2024, capturando el ambiente de cada encuentro y los momentos de la marca con sus invitados.'},
  {id:'programa-cardiopatias-congenitas', titulo:'Programa Nacional de Cardiopatías Congénitas', cliente:'Digimed', destacado:false, ratio:'16/9',
   categorias:['realizacion-coberturas'],
-  imagen:'assets/trabajos/Digimed/digimed_portadaPosadas.png',
+  imagen:'assets/trabajos/digimed-trabajos/digimed_portadaPosadas.png',
   video:'https://www.youtube.com/embed/XybsK7-rU_w',
   brief:'Cuarenta ecógrafos portátiles para todo el país. Cubrimos la entrega que Digimed realizó en acuerdo con el Ministerio de Salud de la Nación, dentro del Programa Nacional de Cardiopatías Congénitas, para que cada equipo llegue a donde hace falta.'},
  {id:'mindray-argentina', titulo:'Mindray Argentina', cliente:'Mindray', destacado:false, ratio:'16/9',
   categorias:['realizacion-institucional'],
-  imagen:'assets/trabajos/Mindray/mindray_portada.jpg',
+  imagen:'assets/trabajos/mindray-trabajos/mindray_portada.jpg',
   video:'https://youtu.be/Pv7_Z7q-0ZI',
   brief:'Cuando hablan los que saben. Referentes del diagnóstico por imágenes cuentan, en primera persona, cómo los ecógrafos de Mindray cambiaron su forma de hacer imágenes médicas.'},
  {id:'sonoscape-hospital-italiano', titulo:'SonoScape y el Hospital Italiano', cliente:'SonoScape', destacado:false, ratio:'16/9',
   categorias:['realizacion-institucional'],
-  imagen:'assets/trabajos/SonoScape/sonoscape_portada.jpg',
+  imagen:'assets/trabajos/sonoscape-trabajos/sonoscape_portada.jpg',
   videos:['https://youtu.be/lvUdJuIFpaY','https://youtu.be/NeorAUM1QTw','https://youtu.be/mK7MM_UbdQA','https://youtu.be/2i5eAJqsMIU'],
-  brief:'El Hospital Italiano, desde adentro. Destacados profesionales de este prestigioso hospital cuentan cómo trabajan con los ecógrafos de SonoScape.'}
+  brief:'El Hospital Italiano, desde adentro. Destacados profesionales de este prestigioso hospital cuentan cómo trabajan con los ecógrafos de SonoScape.'},
+ {id:'simposio-medicina-fetal', titulo:'Simposio Medicina Fetal', cliente:'Aplicaciones Médicas / SonoScape', destacado:false, ratio:'16/9',
+  categorias:['realizacion-coberturas'],
+  imagen:'assets/trabajos/aplicaciones-medicas/aplicaciones-medicas_portada.png',
+  videos:['https://youtu.be/nHvdeVHNnsQ','https://youtu.be/11yp06Q53Do'],
+  brief:'Los casos que marcan la práctica, contados por sus protagonistas. Cubrimos el simposio realizado en la Fundación Hospitalaria de Medicina Fetal, donde destacados profesionales del diagnóstico por imagen presentaron sus casos más relevantes y mostraron cómo los ecógrafos de SonoScape intervinieron en sus proyectos.'},
+ {id:'samsung-media-room', titulo:'Samsung Media Room', cliente:'DJ / Samsung / Mirgor', destacado:false, ratio:'16/9',
+  categorias:['realizacion-coberturas'],
+  imagen:'assets/trabajos/samsung/samsung_portada.png',
+  video:'https://youtube.com/shorts/tPAtxRQCvzE',
+  brief:'Un espacio para probar, aprender y practicar. Presentamos el Samsung Media Room, pensado para que profesionales del diagnóstico por imágenes puedan probar equipos, dar conferencias o realizar prácticas médicas con sus estudiantes.'}
 ];
 
 /* CLIENTES: logos en PNG con fondo transparente, guardados en assets/clientes/. Se muestran en gris.
@@ -90,5 +100,6 @@ const CLIENTES=[
   {n:'OSIAD Salud', f:'osiadsalud2.png'},
   {n:'Sasson', f:'sassonlogo.png'},
   {n:'TY', f:'Logoty.png'},
-  {n:'Rasti', f:'logorasti.png'}
+  {n:'Rasti', f:'logorasti.png'},
+  {n:'Samsung', f:'Samsunglogo.png'}
 ];
