@@ -4,7 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lucero Media | Fotografía, realización audiovisual y streaming</title>
-<meta name="description" content="Fotografía, realización audiovisual y streaming para empresas.">
+<meta name="description" content="Fotografía, realización audiovisual y streaming para empresas. Contenido con mirada de cine y televisión.">
+<meta name="theme-color" content="#202F56">
+<link rel="canonical" href="https://luceromedia.ar/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lucero Media">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://luceromedia.ar/">
+<meta property="og:title" content="Lucero Media | Fotografía, realización audiovisual y streaming">
+<meta property="og:description" content="Fotografía, realización audiovisual y streaming para empresas. Contenido con mirada de cine y televisión.">
+<meta property="og:image" content="https://luceromedia.ar/assets/media/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lucero Media">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucero Media | Fotografía, realización audiovisual y streaming">
+<meta name="twitter:description" content="Fotografía, realización audiovisual y streaming para empresas. Contenido con mirada de cine y televisión.">
+<meta name="twitter:image" content="https://luceromedia.ar/assets/media/og-image.jpg">
 <link rel="icon" href="assets/logos/LM_logo_Isologo_Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +84,7 @@ h2 em{font-style:normal;font-weight:200}
 .sv-b a:hover{color:var(--am);border-color:var(--am)}
 .sv-b a:hover::after{transform:translate(5px,-5px)}
 .sv-b p{font-weight:300;color:#ffffffb8}
+.sv-b p span{font-size:.5em;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--am)}
 @keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* Trabajos */
@@ -194,8 +211,9 @@ if(CFG.whatsapp){const w=$('#wa');w.hidden=false;w.href='https://wa.me/'+CFG.wha
 $('#ml').href='mailto:'+CFG.mail.join('@'); /* el mail se arma por partes para que los robots no lo lean */
 
 /* Servicios */
+const HAY=c=>(typeof TRABAJOS!=='undefined'?TRABAJOS:[]).some(t=>(t.categorias||[]).includes(c));
 const zz='<svg class="zz" viewBox="0 0 120 40" aria-hidden="true"><polyline pathLength="1" points="2,34 22,6 40,32 60,6 80,32 100,6 118,34"/></svg>';
-$('#svl').innerHTML=PROD.map((p,i)=>`<div class="sv"><button class="sv-h" data-i="${i}" aria-expanded="false">${zz}<span class="t"><b>${p.a}</b><span>${p.b}</span></span><i class="pl"></i></button><div class="sv-b"><ul>${p.s.length?p.s.map((x,j)=>`<li style="--n:${j}"><a href="categoria.html?c=${p.k}-${slug(x)}">${x}</a></li>`).join(''):'<li style="--n:0"><p>En construcción</p></li>'}</ul></div></div>`).join('');
+$('#svl').innerHTML=PROD.map((p,i)=>`<div class="sv"><button class="sv-h" data-i="${i}" aria-expanded="false">${zz}<span class="t"><b>${p.a}</b><span>${p.b}</span></span><i class="pl"></i></button><div class="sv-b"><ul>${p.s.length?p.s.map((x,j)=>`<li style="--n:${j}">${HAY(p.k+'-'+slug(x))?`<a href="categoria.html?c=${p.k}-${slug(x)}">${x}</a>`:`<p>${x}<span>Próximamente</span></p>`}</li>`).join(''):'<li style="--n:0"><p>En construcción</p></li>'}</ul></div></div>`).join('');
 function show(i,toggle){document.querySelectorAll('.sv').forEach((el,j)=>{const on=j==i&&(toggle?!el.classList.contains('on'):true);el.classList.toggle('on',on);el.querySelector('button').setAttribute('aria-expanded',on)})}
 $('#svl').addEventListener('click',e=>{const b=e.target.closest('.sv-h');if(b)show(+b.dataset.i,true)});
 show(0);
